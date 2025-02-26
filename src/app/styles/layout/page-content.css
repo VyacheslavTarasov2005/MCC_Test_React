@@ -1,0 +1,11 @@
+.page-content {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 0.5rem;
+    }
+}
