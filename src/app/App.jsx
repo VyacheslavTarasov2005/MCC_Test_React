@@ -1,8 +1,8 @@
-import { PlaceholderPageUi } from "../pages/placeholder";
+import { TreePageUi } from "../pages/tree/";
 
 const App = () => {
   return(
-      <PlaceholderPageUi />
+      <TreePageUi />
   )
 }
 

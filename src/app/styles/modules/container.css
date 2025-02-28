@@ -1,0 +1,15 @@
+.container {
+    padding: 0.5rem;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid white;
+    transition: border-color 0.25s;
+    color: white;
+}
+
+input.container {
+    background-color: #242424;
+    font-size: inherit;
+    color: white;
+}

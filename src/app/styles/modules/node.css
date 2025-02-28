@@ -1,0 +1,40 @@
+.node {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.node .current-node {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.node .node-content {
+    max-width: 20rem;
+    border-radius: 8px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+}
+
+.node .actions {
+    display: flex;
+    align-self: center;
+    gap: 1rem;
+}
+
+.node .edit-button {
+    background-color: #EEA509;
+}
+
+.node .delete-button {
+    background-color: darkred;
+}
+
+.node .add-node,
+.node ul {
+    padding-left: 2rem;
+}

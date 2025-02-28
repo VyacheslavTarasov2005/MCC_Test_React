@@ -1,5 +1,6 @@
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
     font-weight: 400;
 
     color: white;
@@ -36,12 +37,11 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
 }
 button:hover {
-    border-color: #646cff;
+    border: 1px solid white;
 }
 button:focus,
 button:focus-visible {
@@ -49,10 +49,6 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-    :root {
-        font-size: 1rem;
-    }
-
     h1 {
         font-size: 1.5rem;
     }
