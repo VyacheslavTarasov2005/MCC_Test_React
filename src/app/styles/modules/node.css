@@ -26,14 +26,6 @@
     gap: 1rem;
 }
 
-.node .edit-button {
-    background-color: #EEA509;
-}
-
-.node .delete-button {
-    background-color: darkred;
-}
-
 .node .add-node,
 .node ul {
     padding-left: 2rem;

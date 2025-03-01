@@ -16,5 +16,14 @@ export const UseTree = () => {
         setRootNode(newRootNode);
     }
 
-    return { rootNode, addNode }
+    const deleteNode = (node) => {
+        if (node instanceof NodeModel) {
+            node.parent.children.splice(node.id, 1);
+        }
+
+        const newRootNode = new NodeModel(0, '', undefined, rootNode.children);
+        setRootNode(newRootNode);
+    }
+
+    return { rootNode, addNode, deleteNode }
 }

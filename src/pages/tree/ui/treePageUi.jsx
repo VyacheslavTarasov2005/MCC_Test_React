@@ -2,7 +2,7 @@ import { Layout } from "../../../app/layout";
 import { NodeUi, AddNodeUi, UseTree } from '../../../features/tree'
 
 export const TreePageUi = () => {
-    const { rootNode, addNode } = UseTree();
+    const { rootNode, addNode, deleteNode } = UseTree();
 
     return (
         <Layout>
@@ -15,6 +15,7 @@ export const TreePageUi = () => {
                             node={child}
                             text={child.name}
                             addNode={addNode}
+                            deleteNode={deleteNode}
                         />
                     ))}
                 </ul>

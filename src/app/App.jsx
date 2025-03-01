@@ -1,4 +1,4 @@
-import { TreePageUi } from "../pages/tree/";
+import { TreePageUi } from "../pages/tree";
 
 const App = () => {
   return(

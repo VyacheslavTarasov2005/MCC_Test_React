@@ -1,0 +1,11 @@
+.add-button {
+    background-color: #39A935;
+}
+
+.edit-button {
+    background-color: #EEA509;
+}
+
+.delete-button {
+    background-color: darkred;
+}

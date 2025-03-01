@@ -15,14 +15,7 @@
     list-style-type: none;
 }
 
-.tree form {
+.tree > form {
     display: flex;
     gap: 1rem;
-}
-
-.tree button {
-    color: white;
-    background-color: #39A935;
-    padding: 0.5rem;
-    font-size: 1rem;
 }

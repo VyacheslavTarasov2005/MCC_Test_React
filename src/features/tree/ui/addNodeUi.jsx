@@ -15,13 +15,12 @@ export const AddNodeUi = (props) => {
             onSubmit={handleSubmit}
         >
             <InputUi
-                className='container'
                 type='text'
                 name='childName'
                 placeholder='Node Name'
             />
             <ButtonUi
-                className='container add-button'
+                className='add-button'
                 type='submit'
                 text='Add'
             />

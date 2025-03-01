@@ -1,4 +1,4 @@
-import { ButtonUi } from "../../../shared/ui/index.js";
+import { ButtonUi } from "../../../shared/ui";
 import { AddNodeUi } from "./addNodeUi";
 
 export const NodeUi = (props) => {
@@ -9,8 +9,15 @@ export const NodeUi = (props) => {
                     {props.text}
                 </p>
                 <div className='actions'>
-                    <ButtonUi className='container edit-button' text='Edit'/>
-                    <ButtonUi className='container delete-button' text='Delete'/>
+                    <ButtonUi
+                        className='edit-button'
+                        text='Edit'
+                    />
+                    <ButtonUi
+                        className='delete-button'
+                        text='Delete'
+                        onClick={() => props.deleteNode(props.node)}
+                    />
                 </div>
             </div>
             <AddNodeUi
@@ -26,6 +33,7 @@ export const NodeUi = (props) => {
                             node={child}
                             text={child.name}
                             addNode={props.addNode}
+                            deleteNode={props.deleteNode}
                         />
                     ))}
                 </ul>

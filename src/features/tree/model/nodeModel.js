@@ -7,7 +7,7 @@ export class NodeModel {
     }
 
     addChild(nodeName) {
-        const child = new NodeModel(this.children.length + 1, nodeName, this);
+        const child = new NodeModel(this.children.length, nodeName, this);
         this.children.push(child);
     }
 }
