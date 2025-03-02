@@ -48,6 +48,9 @@ button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
+button:disabled {
+    background-color: grey;
+}
 
 @media (max-width: 768px) {
     h1 {

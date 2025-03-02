@@ -1,16 +1,26 @@
 import { ButtonUi, InputUi } from "../../../shared/ui";
 import { TreeContext } from "../lib";
-import { useContext } from "react";
+import {useContext, useState} from "react";
 
 export const EditNodeUi = (props) => {
+    const [inputValue, setInputValue] = useState("");
     const { editNode } = useContext(TreeContext);
+
+    const handleInputChange = (e) => {
+        const value = e.target.value.trim();
+        setInputValue(value);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const formData = new FormData(e.target);
-        const newNodeName = formData.get('newName');
-        editNode(props.node, newNodeName);
-        props.cancelEditing();
+        const newNodeName = formData.get('new-name');
+        if (newNodeName.trim()) {
+            editNode(props.node, newNodeName);
+            props.cancelEditing();
+            setInputValue('');
+        }
     }
 
     return (
@@ -20,12 +30,15 @@ export const EditNodeUi = (props) => {
         >
             <InputUi
                 type='text'
-                name='newName'
+                name='new-name'
                 placeholder='Node Name'
+                value={inputValue}
+                onChange={handleInputChange}
             />
             <ButtonUi
                 className='confirm-button'
                 type='submit'
+                disabled={!inputValue.trim()}
             >
                 Confirm
             </ButtonUi>
