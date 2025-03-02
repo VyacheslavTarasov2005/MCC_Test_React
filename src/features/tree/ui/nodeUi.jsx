@@ -6,14 +6,15 @@ import { useState, useContext } from "react";
 
 export const NodeUi = (props) => {
     const [isEditing, setIsEditing] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const { deleteNode } = useContext(TreeContext);
 
-    const handleEdit = () => {
-        setIsEditing(true);
+    const handleActive = () => {
+        setIsActive(!isActive);
     }
 
-    const handleCancelEdit = () => {
-        setIsEditing(false);
+    const handleEdit = () => {
+        setIsEditing(!isEditing);
     }
 
     return (
@@ -22,33 +23,41 @@ export const NodeUi = (props) => {
                 {isEditing ? (
                     <EditNodeUi
                         node={props.node}
-                        cancelEditing={handleCancelEdit}
+                        cancelEditing={handleEdit}
                     />
                 ) : (
                     <>
-                        <p className='container node-content'>
+                        <ButtonUi
+                            className='node-content'
+                            type='button'
+                            onClick={handleActive}
+                        >
                             {props.text}
-                        </p>
-                        <div className='actions'>
-                            <ButtonUi
-                                className='edit-button'
-                                onClick={handleEdit}
-                            >
-                                Edit
-                            </ButtonUi>
-                            <ButtonUi
-                                className='delete-button'
-                                onClick={() => deleteNode(props.node)}
-                            >
-                                Delete
-                            </ButtonUi>
-                        </div>
+                        </ButtonUi>
+                        { isActive && (
+                            <div className='actions'>
+                                <ButtonUi
+                                    className='edit-button'
+                                    onClick={handleEdit}
+                                >
+                                    Edit
+                                </ButtonUi>
+                                <ButtonUi
+                                    className='delete-button'
+                                    onClick={() => deleteNode(props.node)}
+                                >
+                                    Delete
+                                </ButtonUi>
+                            </div>
+                        )}
                     </>
                 )}
             </div>
-            <AddNodeUi
-                node={props.node}
-            />
+            {isActive && (
+                <AddNodeUi
+                    node={props.node}
+                />
+            )}
             {props.node.children.length > 0 && (
                 <ul>
                     {props.node.children.map((child) => (
