@@ -1,10 +1,12 @@
 import { ButtonUi } from "../../../shared/ui";
 import { AddNodeUi } from "./addNodeUi";
 import { EditNodeUi} from "./editNodeUi";
-import { useState } from "react";
+import { TreeContext } from "../lib";
+import { useState, useContext } from "react";
 
 export const NodeUi = (props) => {
     const [isEditing, setIsEditing] = useState(false);
+    const { deleteNode } = useContext(TreeContext);
 
     const handleEdit = () => {
         setIsEditing(true);
@@ -20,7 +22,6 @@ export const NodeUi = (props) => {
                 {isEditing ? (
                     <EditNodeUi
                         node={props.node}
-                        editNode={props.editNode}
                         cancelEditing={handleCancelEdit}
                     />
                 ) : (
@@ -37,7 +38,7 @@ export const NodeUi = (props) => {
                             <ButtonUi
                                 className='delete-button'
                                 text='Delete'
-                                onClick={() => props.deleteNode(props.node)}
+                                onClick={() => deleteNode(props.node)}
                             />
                         </div>
                     </>
@@ -45,7 +46,6 @@ export const NodeUi = (props) => {
             </div>
             <AddNodeUi
                 node={props.node}
-                addNode={props.addNode}
             />
             {props.node.children.length > 0 && (
                 <ul>
@@ -54,9 +54,6 @@ export const NodeUi = (props) => {
                             key={child.id}
                             node={child}
                             text={child.name}
-                            addNode={props.addNode}
-                            deleteNode={props.deleteNode}
-                            editNode={props.editNode}
                         />
                     ))}
                 </ul>

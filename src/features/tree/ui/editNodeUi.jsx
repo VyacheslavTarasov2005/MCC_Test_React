@@ -1,11 +1,15 @@
 import { ButtonUi, InputUi } from "../../../shared/ui";
+import { TreeContext } from "../lib";
+import { useContext } from "react";
 
 export const EditNodeUi = (props) => {
+    const { editNode } = useContext(TreeContext);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const newNodeName = formData.get('newName');
-        props.editNode(props.node, newNodeName);
+        editNode(props.node, newNodeName);
         props.cancelEditing();
     }
 

@@ -1,11 +1,15 @@
 import {ButtonUi, InputUi} from "../../../shared/ui";
+import { TreeContext } from "../lib";
+import { useContext } from "react";
 
 export const AddNodeUi = (props) => {
+    const { addNode } = useContext(TreeContext);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const nodeName = formData.get('childName');
-        props.addNode(nodeName, props.node);
+        addNode(nodeName, props.node);
         e.target.reset();
     };
 
