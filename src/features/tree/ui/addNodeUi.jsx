@@ -26,8 +26,9 @@ export const AddNodeUi = (props) => {
             <ButtonUi
                 className='add-button'
                 type='submit'
-                text='Add'
-            />
+            >
+                Add
+            </ButtonUi>
         </form>
     )
 }

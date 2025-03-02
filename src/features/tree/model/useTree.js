@@ -36,5 +36,10 @@ export const UseTree = () => {
         update();
     }
 
-    return { rootNode, addNode, deleteNode, editNode };
+    const resetTree = () => {
+        const newRootNode = new NodeModel(0, '');
+        setRootNode(newRootNode);
+    }
+
+    return { rootNode, addNode, deleteNode, editNode, resetTree };
 }

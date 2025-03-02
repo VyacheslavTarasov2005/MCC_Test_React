@@ -7,6 +7,17 @@
     max-width: 100%;
 }
 
+.tree button {
+    display: flex;
+    width: fit-content;
+    align-self: center;
+}
+
+.tree .tree-header {
+    display: flex;
+    gap: 1rem;
+}
+
 .tree ul {
     display: flex;
     flex-direction: column;
@@ -18,4 +29,9 @@
 .tree form {
     display: flex;
     gap: 1rem;
+}
+
+.tree .restart-icon {
+    width: 1rem;
+    height: 1rem;
 }

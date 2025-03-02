@@ -32,14 +32,16 @@ export const NodeUi = (props) => {
                         <div className='actions'>
                             <ButtonUi
                                 className='edit-button'
-                                text='Edit'
                                 onClick={handleEdit}
-                            />
+                            >
+                                Edit
+                            </ButtonUi>
                             <ButtonUi
                                 className='delete-button'
-                                text='Delete'
                                 onClick={() => deleteNode(props.node)}
-                            />
+                            >
+                                Delete
+                            </ButtonUi>
                         </div>
                     </>
                 )}

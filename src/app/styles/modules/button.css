@@ -11,6 +11,8 @@
     background-color: darkred;
 }
 
-.cancel-button {
+.cancel-button,
+.reset-button {
     background-color: grey;
 }
+

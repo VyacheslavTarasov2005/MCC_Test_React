@@ -26,14 +26,16 @@ export const EditNodeUi = (props) => {
             <ButtonUi
                 className='confirm-button'
                 type='submit'
-                text='Confirm'
-            />
+            >
+                Confirm
+            </ButtonUi>
             <ButtonUi
                 className='cancel-button'
                 type='button'
-                text='Cancel'
                 onClick={props.cancelEditing}
-            />
+            >
+                Cancel
+            </ButtonUi>
         </form>
     )
 }
