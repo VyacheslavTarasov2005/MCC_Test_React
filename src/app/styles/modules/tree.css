@@ -15,7 +15,7 @@
     list-style-type: none;
 }
 
-.tree > form {
+.tree form {
     display: flex;
     gap: 1rem;
 }

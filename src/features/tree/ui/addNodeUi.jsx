@@ -11,7 +11,7 @@ export const AddNodeUi = (props) => {
 
     return (
         <form
-            className={props.className}
+            className='add-node'
             onSubmit={handleSubmit}
         >
             <InputUi

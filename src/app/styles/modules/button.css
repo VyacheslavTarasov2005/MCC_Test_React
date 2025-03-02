@@ -1,4 +1,5 @@
-.add-button {
+.add-button,
+.confirm-button {
     background-color: #39A935;
 }
 
@@ -8,4 +9,8 @@
 
 .delete-button {
     background-color: darkred;
+}
+
+.cancel-button {
+    background-color: grey;
 }
