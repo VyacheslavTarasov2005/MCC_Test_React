@@ -1,13 +1,15 @@
+import { nextNodeId } from "./nextNodeId";
+
 export class NodeModel {
-    constructor(id, name, parent = null, children = []) {
+    constructor(id, name, children = []) {
         this.id = id
         this.name = name;
-        this.parent = parent;
         this.children = children;
     }
 
     addChild(nodeName) {
-        const child = new NodeModel(this.children.length, nodeName, this);
+        const child = new NodeModel(nextNodeId.value, nodeName);
+        nextNodeId.value++;
         this.children.push(child);
     }
 }
