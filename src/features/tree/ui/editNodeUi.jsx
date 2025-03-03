@@ -3,7 +3,7 @@ import { TreeContext } from "../lib";
 import {useContext, useState} from "react";
 
 export const EditNodeUi = (props) => {
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState(props.node.name);
     const { editNode } = useContext(TreeContext);
 
     const handleInputChange = (e) => {
