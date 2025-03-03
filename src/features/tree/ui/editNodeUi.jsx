@@ -7,8 +7,7 @@ export const EditNodeUi = (props) => {
     const { editNode } = useContext(TreeContext);
 
     const handleInputChange = (e) => {
-        const value = e.target.value.trim();
-        setInputValue(value);
+        setInputValue(e.target.value);
     };
 
     const handleSubmit = (e) => {

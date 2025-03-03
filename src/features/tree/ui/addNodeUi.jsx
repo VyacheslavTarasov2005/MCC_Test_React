@@ -7,8 +7,7 @@ export const AddNodeUi = (props) => {
     const { addNode } = useContext(TreeContext);
 
     const handleInputChange = (e) => {
-        const value = e.target.value.trim();
-        setInputValue(value);
+        setInputValue(e.target.value);
     };
 
     const handleSubmit = (e) => {
