@@ -5,7 +5,7 @@ export const UseTree = () => {
     const [rootNode, setRootNode] = useState(new NodeModel(0, ''));
 
     const update = () => {
-        const newRootNode = new NodeModel(0, '', undefined, rootNode.children);
+        const newRootNode =  new NodeModel(0, '', rootNode.children);
         setRootNode(newRootNode);
     }
 
@@ -20,9 +20,12 @@ export const UseTree = () => {
         update();
     }
 
-    const deleteNode = (node) => {
-        if (node instanceof NodeModel) {
-            node.parent.children.splice(node.id, 1);
+    const deleteNode = (nodeId, parentNode = null) => {
+        if (parentNode instanceof NodeModel) {
+            parentNode.children = parentNode.children.filter((child) => child.id !== nodeId);
+        }
+        else {
+            rootNode.children = rootNode.children.filter((child) => child.id !== nodeId);
         }
 
         update();

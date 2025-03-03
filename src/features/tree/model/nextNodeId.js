@@ -1,0 +1,1 @@
+export const nextNodeId = { value: 1 };

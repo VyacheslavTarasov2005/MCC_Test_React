@@ -44,7 +44,7 @@ export const NodeUi = (props) => {
                                 </ButtonUi>
                                 <ButtonUi
                                     className='delete-button'
-                                    onClick={() => deleteNode(props.node)}
+                                    onClick={() => deleteNode(props.node.id, props.parentNode)}
                                 >
                                     Delete
                                 </ButtonUi>
@@ -64,6 +64,7 @@ export const NodeUi = (props) => {
                         <NodeUi
                             key={child.id}
                             node={child}
+                            parentNode={props.node}
                             text={child.name}
                         />
                     ))}
